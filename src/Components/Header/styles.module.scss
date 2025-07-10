@@ -1,0 +1,55 @@
+@use '../../variables' as vars;
+@use '../../mixins.scss' as m;
+
+
+.header {
+    width: 100%;
+    padding: 1rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: .5s ease;
+
+    &.scrolled {
+        background-color: black;
+    }
+
+    & .logo {
+        font-size: 2.5rem;
+    }
+
+    & nav {
+        display: flex;
+        gap: 1rem;
+
+        & a {
+            border-bottom: .2rem transparent solid;
+            transition: .2s ease;
+
+            &:hover, &.activeLink {
+                color: vars.$primary-color;
+                border-bottom: .2rem vars.$primary-color solid;
+            }
+        }
+    }
+
+    & .ctaBtn {
+        background-color: vars.$primary-color;
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        transition: all .1s;
+
+        &:hover {
+            background-color: vars.$primary-color-hover;
+            transform: scale(1.03);
+        }
+    }
+
+    @include m.respond-to(md) {
+
+    }
+}
