@@ -5,10 +5,14 @@ import Header from '../../Components/Header/Header';
 
 export default function Home() {
     useEffect(() => {
-        document.body.classList.add(styles.bodyCustom);
+        const root = document.getElementById('root');
+        const body = document.body
+        if (root) root.classList.add(styles.rootCustom);
+        if (body) body.classList.add(styles.bodyCustom);
 
         return () => {
-            document.body.classList.remove(styles.bodyCustom);
+            if (root) root.classList.remove(styles.rootCustom);
+            if (body) body.classList.remove(styles.bodyCustom);
         };
     }, []);
 
