@@ -10,3 +10,23 @@
         }
     }
 }
+
+@mixin scrollbar() {
+    &::-webkit-scrollbar {
+        background-color: vars.$background-page-dark;
+        width: vars.$scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: vars.$background-page-dark;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: vars.$primary-color;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: vars.$primary-color-hover;
+        cursor: grab;
+    }
+}

@@ -1,6 +1,73 @@
 @use '../../variables' as vars;
 @use '../../mixins.scss' as m;
 
+.logoMobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - vars.$scrollbar-width);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    background-color: black;
+
+    @include m.respond-to(lg) {
+        display: flex;
+    }
+}
+
+.mobileButton {
+    display: none;
+
+    @include m.respond-to(lg) {
+        display: flex;
+        position: fixed;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: .8rem;
+        right: 2rem;
+        z-index: 1001;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: .5rem;
+            background-color: white;
+            border-radius: 1rem;
+            position: absolute;
+            top: 30%;
+            right: 50%;
+            transform: translate(50%, -50%) rotate(0deg);
+            transition: .3s;
+        }
+
+        &.openBtn::before {
+            top: 50%;
+            transform: translate(50%, -50%) rotate(135deg);
+        }
+
+        &::after {
+            content: '';
+            width: 80%;
+            height: .5rem;
+            background-color: white;
+            border-radius: 1rem;
+            position: absolute;
+            top: 70%;
+            right: 0;
+            transform: translate(0, -50%);
+            transition: .3s;
+        }
+
+        &.openBtn::after {
+            top: 50%;
+            transform: translate(0, -50%) rotate(-135deg);
+            width: 100%;
+        }
+    }
+}
 
 .header {
     width: 100%;
@@ -14,12 +81,13 @@
     z-index: 1000;
     transition: .5s ease;
 
+
     &.scrolled {
         background-color: black;
     }
 
     & .logo {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
     & nav {
@@ -30,7 +98,8 @@
             border-bottom: .2rem transparent solid;
             transition: .2s ease;
 
-            &:hover, &.activeLink {
+            &:hover,
+            &.activeLink {
                 color: vars.$primary-color;
                 border-bottom: .2rem vars.$primary-color solid;
             }
@@ -39,9 +108,14 @@
 
     & .ctaBtn {
         background-color: vars.$primary-color;
-        padding: 1rem 1.5rem;
+        padding: 0.85rem 1.2rem;
         border-radius: 1rem;
         transition: all .1s;
+
+        &.none {
+            opacity: 0;
+            pointer-events: none;
+        }
 
         &:hover {
             background-color: vars.$primary-color-hover;
@@ -49,7 +123,37 @@
         }
     }
 
-    @include m.respond-to(md) {
+    @include m.respond-to(lg) {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background-color: black;
+        padding: 5rem 0;
+        transition: .3s;
+        transform: translate(100%, 0);
 
+        &.open {
+            transform: translate(0, 0);
+        }
+
+        & .logo {
+            font-size: 2.6rem;
+        }
+
+        & nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+
+            & a {
+                font-size: 1.2rem;
+            }
+        }
+
+        & .ctaBtn {
+            background-color: vars.$primary-color;
+            padding: 1.5rem 2rem;
+        }
     }
 }

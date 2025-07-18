@@ -6,6 +6,7 @@ import { createRoot } from 'react-dom/client'
 import Home from './Pages/Home/Home'
 import About from './Pages/About/About'
 import Doubts from './Pages/Doubts/Doubts'
+import Contact from './Pages/Contact/Contact'
 
 //Import Contexts
 import { ScrollProvider } from './Contexts/ScrollContext'
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/duvidas",
     element: <Doubts />
+  },
+  {
+    path: "/contato",
+    element: <Contact />
   },
 ])
 
