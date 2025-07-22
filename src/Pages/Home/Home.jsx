@@ -14,19 +14,40 @@ export default function Home() {
     const [service, setService] = useState(1)
     const sectionsRef = useRef({});
 
+    const handleScroll = throttle(() => {
+        const sectionAtual = document.querySelector(`section[data-service="${service}"], main[data-service="${service}"]`)
+
+        const root = document.getElementById(styles.homeContainer);
+        
+        if (root) {
+            const scrollTop = root.scrollTop;
+            const clientHeight = root.clientHeight;
+            const scrollHeight = root.scrollHeight;
+            const scrollPercent = ((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(0)
+
+            console.log('Scroll atual (px):', scrollTop);
+            console.log('Altura visível:', clientHeight);
+            console.log('Altura total:', scrollHeight);
+            console.log('Porcentagem scrollada:', scrollPercent);
+
+            if(scrollPercent > 90) {
+                console.log(document.querySelector("aside"));
+                
+                document.querySelector("aside").classList.add(styles.recued)
+            } else document.querySelector("aside").classList.remove(styles.recued)
+        }
+
+        if (sectionAtual) {
+            setService((sectionAtual.getBoundingClientRect().top / sectionAtual.clientHeight).toFixed(0) * -1 + 1)
+        }
+    }, 100)
+
     useEffect(() => {
         const root = document.getElementById(styles.homeContainer);
         const body = document.body
         if (root) root.classList.add(styles.rootCustom);
         if (body) body.classList.add(styles.bodyCustom);
 
-        const handleScroll = debounce(() => {
-            const sectionAtual = document.querySelector(`section[data-service="${service}"], main[data-service="${service}"]`)
-
-            if (sectionAtual) {
-                setService((sectionAtual.getBoundingClientRect().top / sectionAtual.clientHeight).toFixed(0) * -1 + 1)
-            }
-        }, 100)
 
         root.addEventListener("scroll", handleScroll)
 
@@ -45,9 +66,9 @@ export default function Home() {
     useEffect(() => {
         const sectionAtual = document.querySelector(`section[data-service="${service}"], main[data-service="${service}"]`)
         const aside = document.querySelector("aside")
-        
+
         if (aside.style.display != "none") { // Parou aqui
-            
+
         }
     }, [service])
 
@@ -144,7 +165,7 @@ export default function Home() {
                 <WhatsAppButton />
                 <aside>
                     <ul>
-                        {/* <li key={1} data-service={`1`} className={`${styles.serviceItemMenu} ${service == 1 ? styles.active : ""}`} onClick={ev => changeSection(ev)}><h1 className={`${styles.logo} logo`}>LÍDER<span>FLEX</span></h1></li> */}
+                        <li key={1} data-service={`1`} className={`${styles.serviceItemMenu} ${service == 1 ? styles.active : ""}`} onClick={ev => changeSection(ev)}><h1 className={`${styles.logo} logo`}>LÍDER<span>FLEX</span></h1></li>
                         <h3>Nossos serviços</h3>
                         {
                             services.map(serviceElement => {
