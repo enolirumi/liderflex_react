@@ -18,7 +18,7 @@ export default function Home() {
         const sectionAtual = document.querySelector(`section[data-service="${service}"], main[data-service="${service}"]`)
 
         const root = document.getElementById(styles.homeContainer);
-        
+
         if (root) {
             const scrollTop = root.scrollTop;
             const clientHeight = root.clientHeight;
@@ -30,9 +30,9 @@ export default function Home() {
             console.log('Altura total:', scrollHeight);
             console.log('Porcentagem scrollada:', scrollPercent);
 
-            if(scrollPercent > 90) {
+            if (scrollPercent > 90) {
                 console.log(document.querySelector("aside"));
-                
+
                 document.querySelector("aside").classList.add(styles.recued)
             } else document.querySelector("aside").classList.remove(styles.recued)
         }
@@ -87,6 +87,11 @@ export default function Home() {
         }
     };
 
+    const backgroundEffect = `
+        linear-gradient(180deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
+        linear-gradient(90deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)),
+    `
+
     const services = [
         {
             infos: {
@@ -95,8 +100,7 @@ export default function Home() {
             },
             backgroundStyle: {
                 background: `
-                    linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
-                    linear-gradient(90deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)),
+                    ${backgroundEffect}
                     url('/images/Home/porta_pivotante.jpg')
                 `,
                 backgroundAttachment: `fixed`,
@@ -112,8 +116,7 @@ export default function Home() {
             },
             backgroundStyle: {
                 background: `
-                    linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
-                    linear-gradient(90deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)),
+                    ${backgroundEffect}
                     url('/images/Home/versatik _division.jpg')
                 `,
                 backgroundAttachment: `fixed`,
@@ -129,8 +132,7 @@ export default function Home() {
             },
             backgroundStyle: {
                 background: `
-                    linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
-                    linear-gradient(90deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)),
+                    ${backgroundEffect}
                     url('/images/Home/slide_door.jpg')
                 `,
                 backgroundAttachment: `fixed`,
@@ -146,8 +148,7 @@ export default function Home() {
             },
             backgroundStyle: {
                 background: `
-                    linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
-                    linear-gradient(90deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)),
+                    ${backgroundEffect}
                     url('/images/Home/guarda_corpo.jpg')
                 `,
                 backgroundAttachment: `fixed`,
