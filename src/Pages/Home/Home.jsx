@@ -139,8 +139,7 @@ export default function Home() {
             },
             backgroundStyle: {
                 background: `
-                    ${backgroundEffect}
-                    url('/images/Home/porta_pivotante.jpg')
+                    transparent
                 `,
                 backgroundAttachment: `fixed`,
                 backgroundSize: `cover`,

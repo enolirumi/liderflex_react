@@ -13,6 +13,9 @@
 
     @include m.respond-to(lg) {
         padding: 0 2rem;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     @include m.respond-to(md) {
@@ -51,6 +54,11 @@
             max-width: 25vw;
             border: vars.$primary-color .2rem solid;
             border-radius: 1rem;
+
+            @include m.respond-to(lg) {
+                max-width: none;
+                max-height: 40vh;
+            }
         }
     }
 }

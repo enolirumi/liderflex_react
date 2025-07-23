@@ -91,9 +91,15 @@ header {
     }
 
     & footer {
+        height: fit-content;
         min-height: 50vh;
         width: 100%;
         scroll-snap-align: end;
+        
+        @include m.respond-to(xl) {
+            padding-top: 10vh;
+            scroll-snap-align: start;
+        }
     }
 
     & main {
