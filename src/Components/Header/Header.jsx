@@ -3,10 +3,12 @@ import { useScrollY } from '../../Contexts/ScrollContext'
 import styles from './styles.module.scss'
 import { NavLink } from 'react-router-dom'
 
+import Logo from '../Logo/Logo';
+
 import debounce from 'lodash.debounce';
 import throttle from 'lodash.throttle';
 
-export default function Header() {
+export default function Header(props) {
 
     const [mobileMenu, setMobileMenu] = useState(false)
     const href = window.location.href.split("/")
@@ -15,11 +17,11 @@ export default function Header() {
 
     return (
         <>
-            <div className={`${styles.logoMobile}`}><h1 className={`${styles.logo} logo`}>LÍDER<span>FLEX</span></h1></div>
+            <div className={`${styles.logoMobile}`}>{<Logo />}</div>
             <div className={`${styles.mobileButton} ${mobileMenu ? styles.openBtn : ''}`} onClick={() => mobileMenu ? setMobileMenu(false) : setMobileMenu(true)}></div>
             <header className={`${styles.header} ${scrollY > 0 ? styles.scrolled : ''} ${mobileMenu ? styles.open : ''}`}>
                 <NavLink to="/">
-                    <h1 className={`${styles.logo} logo`}>LÍDER<span>FLEX</span></h1>
+                    {<Logo />}
                 </NavLink>
                 <nav>
                     <NavLink to="/" className={({ isActive }) => `${styles.navElement} ${isActive ? styles.activeLink : styles.link}`}>
@@ -35,8 +37,8 @@ export default function Header() {
                         Contato
                     </NavLink>
                 </nav>
-                <NavLink to={`/contato`} className={`${styles.ctaBtn}`}>Faça um orçamento</NavLink>
-                {/* ${(href[href.length - 1] == "" && scrollY == 0) ? styles.none : ""} pra colocar no className acima caso necessário */}
+                <NavLink to={`/contato`} className={`${styles.ctaBtn} ctaBtn`}>Faça um orçamento</NavLink>
+                {/* ${(href[href.length - 1] == "" && props.scrollHome == 0) ? styles.none : ""} pra colocar no className acima caso necessário */}
             </header>
         </>
     )

@@ -34,7 +34,11 @@ body {
     pointer-events: none;
     font-weight: 400;
 
-    &>span {
+    & .flex {
         color: vars.$secondary-color;
+    }
+
+    &.vidros {
+        color: vars.$primary-color;
     }
 }

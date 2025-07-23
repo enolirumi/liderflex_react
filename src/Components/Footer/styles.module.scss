@@ -1,5 +1,48 @@
-
 .footer {
-    min-height: 50vh;
-    background-color: purple;
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    display: flex;
+
+    &>div {
+        width: 33.33333%;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.logoContainer {
+
+        }
+
+        &.infos {
+            flex-direction: column;
+            gap: .8rem;
+            align-items: flex-start;
+
+            &>div {
+                margin-top: .8rem;
+            }
+
+            & .subtitle {
+                font-weight: bold;
+                font-size: 1rem;
+                margin-bottom: .5rem;
+            }
+
+            & .content {
+                font-size: .9rem;
+            }
+        }
+
+        &.map {
+
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
 }

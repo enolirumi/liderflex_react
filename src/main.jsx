@@ -1,15 +1,6 @@
-import { StrictMode } from 'react'
-import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-
-//Import Pages
-import Home from './Pages/Home/Home'
-import About from './Pages/About/About'
-import Doubts from './Pages/Doubts/Doubts'
-import Contact from './Pages/Contact/Contact'
-
-//Import Contexts
-import { ScrollProvider } from './Contexts/ScrollContext'
+import App from './App'
 
 //Import CSS
 import './global.scss'
@@ -21,30 +12,8 @@ import '@fontsource/host-grotesk/700.css'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/700.css'
 
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />
-  },
-  {
-    path: "/sobre",
-    element: <About />
-  },
-  {
-    path: "/duvidas",
-    element: <Doubts />
-  },
-  {
-    path: "/contato",
-    element: <Contact />
-  },
-])
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ScrollProvider>
-      <RouterProvider router={router} />
-    </ScrollProvider>
+    <App></App>
   </StrictMode>
 )

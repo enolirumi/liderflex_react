@@ -1,0 +1,14 @@
+
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    text-align: start;
+    width: fit-content;
+
+    .secondLine {
+        font-size: 50%;
+        text-align: end;
+    }
+}

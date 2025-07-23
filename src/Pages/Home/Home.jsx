@@ -8,34 +8,23 @@ import HomeSection from '../../Components/HomeSection/HomeSection';
 import WhatsAppButton from '../../Components/WhatsAppButton/WhatsAppButton';
 import debounce from 'lodash.debounce';
 import throttle from 'lodash.throttle';
+import HomeSectionB from '../../Components/HomeSectionB/HomeSectionB';
+import Logo from '../../Components/Logo/Logo';
 
 export default function Home() {
 
     const [service, setService] = useState(1)
+    const [scrollHomePercent, setScrollHomePercent] = useState(0)
     const sectionsRef = useRef({});
 
     const handleScroll = throttle(() => {
         const sectionAtual = document.querySelector(`section[data-service="${service}"], main[data-service="${service}"]`)
 
         const root = document.getElementById(styles.homeContainer);
-
-        if (root) {
-            const scrollTop = root.scrollTop;
-            const clientHeight = root.clientHeight;
-            const scrollHeight = root.scrollHeight;
-            const scrollPercent = ((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(0)
-
-            console.log('Scroll atual (px):', scrollTop);
-            console.log('Altura visível:', clientHeight);
-            console.log('Altura total:', scrollHeight);
-            console.log('Porcentagem scrollada:', scrollPercent);
-
-            if (scrollPercent > 90) {
-                console.log(document.querySelector("aside"));
-
-                document.querySelector("aside").classList.add(styles.recued)
-            } else document.querySelector("aside").classList.remove(styles.recued)
-        }
+        const scrollTop = root.scrollTop;
+        const clientHeight = root.clientHeight;
+        const scrollHeight = root.scrollHeight;
+        setScrollHomePercent(((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(0))
 
         if (sectionAtual) {
             setService((sectionAtual.getBoundingClientRect().top / sectionAtual.clientHeight).toFixed(0) * -1 + 1)
@@ -43,6 +32,7 @@ export default function Home() {
     }, 100)
 
     useEffect(() => {
+        document.querySelector("header .ctaBtn").classList.add(styles.ctaBtn)
         const root = document.getElementById(styles.homeContainer);
         const body = document.body
         if (root) root.classList.add(styles.rootCustom);
@@ -62,6 +52,25 @@ export default function Home() {
             root.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    useEffect(() => {
+        if (scrollHomePercent == 0) {
+            document.querySelector("header .ctaBtn").classList.add(styles.none)
+        } else {
+            document.querySelector("header .ctaBtn").classList.remove(styles.none)
+        }
+
+        if (root) {
+
+            if (scrollHomePercent > 90) {
+                document.querySelector("aside").classList.add(styles.recued)
+                document.querySelector("header").classList.add(styles.scrolled)
+            } else {
+                document.querySelector("aside").classList.remove(styles.recued)
+                document.querySelector("header").classList.remove(styles.scrolled)
+            }
+        }
+    }, [scrollHomePercent])
 
     useEffect(() => {
         const sectionAtual = document.querySelector(`section[data-service="${service}"], main[data-service="${service}"]`)
@@ -96,7 +105,37 @@ export default function Home() {
         {
             infos: {
                 id: 2,
+                title: `Versatik Division`,
+                images: [
+                    {
+                        id: 1,
+                        imagePath: `/images/Home/versatik_division.jpg`
+                    }
+                ],
+                type: "a",
+            },
+            backgroundStyle: {
+                background: `
+                    ${backgroundEffect}
+                    url('/images/Home/versatik_division.jpg')
+                `,
+                backgroundAttachment: `fixed`,
+                backgroundSize: `cover`,
+                backgroundRepeat: `no-repeat`,
+                backgroundPosition: `center center`,
+            }
+        },
+        {
+            infos: {
+                id: 3,
                 title: `Porta Pivotante`,
+                images: [
+                    {
+                        id: 1,
+                        imagePath: `/images/Home/porta_pivotante.jpg`
+                    }
+                ],
+                type: "b",
             },
             backgroundStyle: {
                 background: `
@@ -111,24 +150,15 @@ export default function Home() {
         },
         {
             infos: {
-                id: 3,
-                title: `Versatik Division`,
-            },
-            backgroundStyle: {
-                background: `
-                    ${backgroundEffect}
-                    url('/images/Home/versatik _division.jpg')
-                `,
-                backgroundAttachment: `fixed`,
-                backgroundSize: `cover`,
-                backgroundRepeat: `no-repeat`,
-                backgroundPosition: `center center`,
-            }
-        },
-        {
-            infos: {
                 id: 4,
                 title: `Slide door`,
+                images: [
+                    {
+                        id: 1,
+                        imagePath: `/images/Home/slide_door.jpg`
+                    }
+                ],
+                type: "a",
             },
             backgroundStyle: {
                 background: `
@@ -145,6 +175,13 @@ export default function Home() {
             infos: {
                 id: 5,
                 title: `Guarda Corpo`,
+                images: [
+                    {
+                        id: 1,
+                        imagePath: `/images/Home/guarda_corpo.jpg`
+                    }
+                ],
+                type: "a",
             },
             backgroundStyle: {
                 background: `
@@ -159,6 +196,19 @@ export default function Home() {
         },
     ]
 
+    const sectionType = (serviceElement) => {
+        switch (serviceElement.infos.type) {
+            case "a":
+                return (<HomeSection title={serviceElement.infos.title} images={serviceElement.infos.images}></HomeSection>)
+                break
+            case "b":
+                return (<HomeSectionB title={serviceElement.infos.title} images={serviceElement.infos.images}></HomeSectionB>)
+                break
+            default:
+                return (<HomeSection title={serviceElement.infos.title} images={serviceElement.infos.images}></HomeSection>)
+        }
+    }
+
     return (
         <>
             <div className={styles.homeContainer} id={styles.homeContainer}>
@@ -166,7 +216,7 @@ export default function Home() {
                 <WhatsAppButton />
                 <aside>
                     <ul>
-                        <li key={1} data-service={`1`} className={`${styles.serviceItemMenu} ${service == 1 ? styles.active : ""}`} onClick={ev => changeSection(ev)}><h1 className={`${styles.logo} logo`}>LÍDER<span>FLEX</span></h1></li>
+                        <li key={1} data-service={`1`} className={`${styles.serviceItemMenu} ${service == 1 ? styles.active : ""}`} onClick={ev => changeSection(ev)}>{<Logo />}</li>
                         <h3>Nossos serviços</h3>
                         {
                             services.map(serviceElement => {
@@ -180,7 +230,7 @@ export default function Home() {
                 </aside>
                 <main data-service="1">
                     <div className={styles.contentMain}>
-                        <h1 className={`${styles.logo} logo`}>LÍDER<span>FLEX</span></h1>
+                        <Logo/>
                         <div className={styles.descriptionMain}>
                             Transparência <br />
                             é mais do que apenas estilo <br />
@@ -193,7 +243,7 @@ export default function Home() {
                     services.map(serviceElement => {
                         return (
                             <section key={serviceElement.infos.id} data-service={`${serviceElement.infos.id}`} style={serviceElement.backgroundStyle}>
-                                <HomeSection></HomeSection>
+                                {sectionType(serviceElement)}
                             </section>
                         )
                     })
