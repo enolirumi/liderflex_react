@@ -199,10 +199,8 @@ export default function Home() {
         switch (serviceElement.infos.type) {
             case "a":
                 return (<HomeSection title={serviceElement.infos.title} images={serviceElement.infos.images}></HomeSection>)
-                break
             case "b":
                 return (<HomeSectionB title={serviceElement.infos.title} images={serviceElement.infos.images}></HomeSectionB>)
-                break
             default:
                 return (<HomeSection title={serviceElement.infos.title} images={serviceElement.infos.images}></HomeSection>)
         }
@@ -215,7 +213,7 @@ export default function Home() {
                 <WhatsAppButton />
                 <aside>
                     <ul>
-                        <li key={1} data-service={`1`} className={`${styles.serviceItemMenu} ${service == 1 ? styles.active : ""}`} onClick={ev => changeSection(ev)}>{<Logo />}</li>
+                        <li key={1} data-service={`1`} className={`${styles.serviceItemMenu} ${service == 1 ? styles.active : ""}`} onClick={ev => changeSection(ev)}>Início</li>
                         <h3>Nossos serviços</h3>
                         {
                             services.map(serviceElement => {

@@ -60,16 +60,18 @@ header {
 
             li.serviceItemMenu {
                 cursor: pointer;
+                transition: .4s;
 
                 & h1 {
                     font-size: 1rem;
-                    color: white;
+                    color: currentColor;
                 }
 
                 &.active,
                 &:hover {
                     color: vars.$primary-color;
                     font-weight: 700;
+                    transform: translateX(.8rem);
 
                     & h1 {
                         color: currentColor;
