@@ -3,6 +3,9 @@ import Logo from '../Logo/Logo'
 import styles from './styles.module.scss'
 import { NavLink } from 'react-router-dom'
 
+import { FaPhone, FaInstagram, FaFacebookF } from "react-icons/fa6";
+import { IoIosMail } from "react-icons/io";
+
 export default function Footer(props) {
   const scrollY = useScrollY()
 
@@ -10,20 +13,31 @@ export default function Footer(props) {
     <footer className={styles.footer} data-service={props.dataService ? props.dataService : ""}>
       <div className={styles.logoContainer}>
         <Logo />
+        <div className={styles.socialMediaContainer}>
+          <a href='' className={styles.socialMediaButton}>
+            <FaInstagram />
+          </a>
+          <a href='' className={styles.socialMediaButton}>
+            <FaFacebookF />
+          </a>
+        </div>
       </div>
       <div className={styles.infos}>
         <div>
           <div className={styles.subtitle}>
-            Telefones:
+            Contato:
           </div>
           <div className={styles.content}>
-            (31) 3332 - 6321
+            <FaPhone />(31) 3332 - 6321
           </div>
           <div className={styles.content}>
-            (31) 3504 - 5808
+            <FaPhone />(31) 3504 - 5808
           </div>
           <div className={styles.content}>
-            (31) 9 8552 - 1693
+            <FaPhone />(31) 9 8552 - 1693
+          </div>
+          <div className={styles.content}>
+            <IoIosMail style={{fontSize: "1.1rem"}} />liderflexvidros@liderflexvidros.com.br
           </div>
         </div>
         <div>
@@ -33,14 +47,6 @@ export default function Footer(props) {
           <div className={styles.content}>
             Rua Doutor Álvaro Camargos, 2413, Loja 03 - Santa Mônica <br />
             CEP: 31.565-312 - Belo Horizonte - MG
-          </div>
-        </div>
-        <div>
-          <div className={styles.subtitle}>
-            E-mail
-          </div>
-          <div className={styles.content}>
-            liderflexvidros@liderflexvidros.com.br
           </div>
         </div>
         <div>

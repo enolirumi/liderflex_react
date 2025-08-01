@@ -152,10 +152,10 @@ export default function Home() {
                 id: 4,
                 title: `Slide door`,
                 images: [
-                    {
-                        id: 1,
-                        imagePath: `/images/Home/slide_door.jpg`
-                    }
+                    // {
+                    //     id: 1,
+                    //     imagePath: `/images/Home/slide_door.jpg`
+                    // }
                 ],
                 type: "a",
             },
