@@ -15,6 +15,18 @@ export default function Header(props) {
 
     const scrollY = useScrollY()
 
+    // Acerta a largura do logo responsivo do topo
+    useEffect(() => {
+        let page = window.location.href.split("/")
+        page = page[page.length - 1]
+
+        if (page == "") document.querySelector(`.${styles.logoMobile}`).classList.add(styles.home)
+
+        return () => {
+            if(page == "") document.querySelector(`.${styles.logoMobile}`).classList.remove(styles.home)
+        }
+    }, [])
+
     return (
         <>
             <div className={`${styles.logoMobile}`}>{<Logo />}</div>

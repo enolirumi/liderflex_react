@@ -5,12 +5,16 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% - vars.$scrollbar-width);
+    width: 100%;
     display: none;
     align-items: center;
     justify-content: center;
     padding: 1rem 0;
     background-color: black;
+
+    &.home {
+        width: calc(100% - vars.$scrollbar-width);
+    }
 
     @include m.respond-to(lg) {
         display: flex;
