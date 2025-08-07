@@ -35,6 +35,8 @@ export default function About() {
                         </p>
                         <div className={styles.seeMore} onClick={seeMoreOpen}>{seeMore ? "Ver menos" : "Ver mais"}</div>
                     </div>
+                    <div className={`${styles.cardImage} ${styles.card}`}>
+                    </div>
                     <div className={`${styles.cardServices} ${styles.infoCard} ${styles.card}`}>
                         <div className={styles.data}>
                             20+
@@ -42,8 +44,6 @@ export default function About() {
                         <div className={styles.cardDescription}>
                             Anos de mercado
                         </div>
-                    </div>
-                    <div className={`${styles.cardImage} ${styles.card}`}>
                     </div>
                     <div className={`${styles.cardA} ${styles.infoCard} ${styles.card}`}>
                         <div className={styles.data}>

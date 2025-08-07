@@ -4,6 +4,11 @@
 
 .backgroundLightsContainer {
 
+    &>div {
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+    }
+
     .first {
         width: 0;
         height: 0;
@@ -14,6 +19,7 @@
         top: 40vh;
         right: 40vw;
         z-index: -1;
+        animation-delay: 0s;
 
         box-shadow: 0px 0px 10vw 20vw rgba(v.$primary-color, 0.5);
         -webkit-box-shadow: 0px 0px 10vw 20vw rgba(v.$primary-color, 0.5);
@@ -28,6 +34,7 @@
         top: 20vh;
         right: 20vw;
         z-index: -1;
+        animation-delay: .4s;
 
         box-shadow: 0px 0px 7vw 10vw rgba(v.$secondary-color, 0.5);
         -webkit-box-shadow: 0px 0px 7vw 10vw rgba(v.$secondary-color, 0.5);
@@ -42,6 +49,7 @@
         top: 60vh;
         right: 80vw;
         z-index: -1;
+        animation-delay: .6s;
 
         box-shadow: 0px 0px 7vw 10vw rgba(v.$secondary-color, 0.5);
         -webkit-box-shadow: 0px 0px 7vw 10vw rgba(v.$secondary-color, 0.5);
@@ -91,6 +99,11 @@
                 width: 31.75%;
                 transform: translateX(215%);
                 transition: all .5s ease-out;
+
+                @include m.respond-to(xl) {
+                    width: 100%;
+                    transform: translateX(0);
+                }
             }
         }
 
@@ -153,7 +166,15 @@
                 right: 0;
                 bottom: 1rem;
 
-                &:hover {}
+                &:hover {
+                    color: black;
+                }
+            }
+
+            @include m.respond-to(xl) {
+                height: fit-content;
+                max-height: 30vh;
+
             }
         }
 
@@ -173,6 +194,10 @@
             background-size: cover;
 
             padding: 2rem 3rem;
+
+            @include m.respond-to(xl) {
+                min-height: 200px;
+            }
         }
 
         .cardA {
@@ -211,6 +236,10 @@
 
             .dataDescription {
                 font-size: 1.5rem;
+            }
+
+            @include m.respond-to(xl) {
+                text-align: center;
             }
         }
     }
