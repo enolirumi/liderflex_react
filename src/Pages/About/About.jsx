@@ -3,6 +3,7 @@ import styles from './style.module.scss'; // se estiver usando CSS Modules
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import WhatsAppButton from '../../Components/WhatsAppButton/WhatsAppButton';
+import LightsBg from '../../Components/LightsBg/LightsBg';
 
 export default function About() {
     const [seeMore, setSeeMore] = useState(false)
@@ -16,11 +17,7 @@ export default function About() {
         <>
             <Header />
             <WhatsAppButton />
-            <div className={styles.backgroundLightsContainer}>
-                <div className={styles.first}></div>
-                <div className={styles.second}></div>
-                <div className={styles.third}></div>
-            </div>
+            <LightsBg />
             <main className={styles.main}>
                 <div className={`${styles.container} ${seeMore ? styles.contentOpen : ""}`}>
                     <div className={`${styles.cardContent} ${styles.card}`}>

@@ -43,7 +43,7 @@ export default function Header(props) {
                         LíderFlex
                     </NavLink>
                     <NavLink to="/duvidas" className={({ isActive }) => `${styles.navElement} ${isActive ? styles.activeLink : styles.link}`}>
-                        Dúvidas
+                        Dúvidas Frequentes
                     </NavLink>
                     <NavLink to="/contato" className={({ isActive }) => `${styles.navElement} ${isActive ? styles.activeLink : styles.link}`}>
                         Contato

@@ -93,6 +93,10 @@
                         background: transparent;
                     }
                 }
+
+                @include m.respond-to(xl) {
+                    height: fit-content;
+                }
             }
 
             .cardImage {
@@ -173,7 +177,7 @@
 
             @include m.respond-to(xl) {
                 height: fit-content;
-                max-height: 30vh;
+                height: 30vh;
 
             }
         }

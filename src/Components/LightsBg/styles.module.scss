@@ -1,0 +1,82 @@
+@use "../../variables" as v;
+@use "../../mixins.scss" as m;
+@use "../../keyframes.scss" as k;
+
+
+.backgroundLightsContainer {
+
+    &>div {
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+    }
+
+    .first {
+        width: 0;
+        height: 0;
+        position: fixed;
+        background-color: v.$primary-color;
+        top: 20vh;
+        right: 20vw;
+        top: 40vh;
+        right: 40vw;
+        z-index: -1;
+        border-radius: 100%;
+        animation-delay: 0s;
+
+        box-shadow: 0px 0px 10vw 20vw rgba(v.$primary-color, 0.5);
+        -webkit-box-shadow: 0px 0px 10vw 20vw rgba(v.$primary-color, 0.5);
+        -moz-box-shadow: 0px 0px 10vw 20vw rgba(v.$primary-color, 0.5);
+
+        @include m.respond-to(xl) {
+            box-shadow: 0px 0px 13vw 30vw rgba(v.$primary-color, 0.5);
+            -webkit-box-shadow: 0px 0px 13vw 30vw rgba(v.$primary-color, 0.5);
+            -moz-box-shadow: 0px 0px 13vw 30vw rgba(v.$primary-color, 0.5);
+        }
+    }
+
+    .second {
+        width: 0;
+        height: 0;
+        position: fixed;
+        background-color: v.$secondary-color;
+        top: 20vh;
+        right: 20vw;
+        z-index: -1;
+        border-radius: 100%;
+        animation-delay: .4s;
+
+        box-shadow: 0px 0px 7vw 10vw rgba(v.$secondary-color, 0.5);
+        -webkit-box-shadow: 0px 0px 7vw 10vw rgba(v.$secondary-color, 0.5);
+        -moz-box-shadow: 0px 0px 7vw 10vw rgba(v.$secondary-color, 0.5);
+
+        @include m.respond-to(xl) {
+            box-shadow: 0px 0px 10vw 15vw rgba(v.$secondary-color, 0.5);
+            -webkit-box-shadow: 0px 0px 10vw 15vw rgba(v.$secondary-color, 0.5);
+            -moz-box-shadow: 0px 0px 10vw 15vw rgba(v.$secondary-color, 0.5);
+        }
+    }
+
+    .third {
+        width: 0;
+        height: 0;
+        position: fixed;
+        background-color: v.$secondary-color;
+        top: 60vh;
+        right: 80vw;
+        z-index: -1;
+        border-radius: 100%;
+        animation-delay: .6s;
+
+        box-shadow: 0px 0px 7vw 10vw rgba(v.$secondary-color, 0.5);
+        -webkit-box-shadow: 0px 0px 7vw 10vw rgba(v.$secondary-color, 0.5);
+        -moz-box-shadow: 0px 0px 7vw 10vw rgba(v.$secondary-color, 0.5);
+
+        @include m.respond-to(xl) {
+            box-shadow: 0px 0px 10vw 15vw rgba(v.$secondary-color, 0.5);
+            -webkit-box-shadow: 0px 0px 10vw 15vw rgba(v.$secondary-color, 0.5);
+            -moz-box-shadow: 0px 0px 10vw 15vw rgba(v.$secondary-color, 0.5);
+        }
+    }
+}
+
+@include k.fadeIn()
