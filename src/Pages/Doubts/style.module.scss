@@ -12,6 +12,7 @@
 
     @include m.respond-to(xl) {
         padding: 15vh 5% 5vh 5%;
+        align-items: center;
     }
 
     h2 {
