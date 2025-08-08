@@ -44,16 +44,23 @@
                 color: white;
                 font-size: 1rem;
                 text-align: left;
-                transition: .3s;
+                transition: .25s;
 
                 &:hover {
                     background-color: v.$primary-color-hover;
                 }
 
-                svg {
-                    font-size: 3rem;
-                    transition: .5s;
+                .question {
                     pointer-events: none;
+                }
+
+                .arrowContainer {
+
+                    svg {
+                        font-size: 1.5rem;
+                        transition: .5s;
+                        pointer-events: none;
+                    }
                 }
             }
 
@@ -91,7 +98,6 @@
                     background-color: v.$primary-color-hover;
 
                     svg {
-                        font-size: 3rem;
                         transform: rotate(-180deg);
                     }
                 }

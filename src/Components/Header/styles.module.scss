@@ -131,6 +131,7 @@
     @include m.respond-to(lg) {
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
         height: 100vh;
         background-color: black;
         padding: 5rem 0;

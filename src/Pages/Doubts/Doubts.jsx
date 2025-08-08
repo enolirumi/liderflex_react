@@ -19,7 +19,7 @@ export default function Doubts() {
 
     const openAccordion = (ev) => {
         ev.target.parentNode.classList.toggle(styles.open)
-        
+
     }
 
     return (
@@ -32,8 +32,10 @@ export default function Doubts() {
                 <div className={styles.doubtsContainer}>
                     <div className={styles.accordionContainer}>
                         <button className={styles.accordionHead} onClick={(ev) => openAccordion(ev)}>
-                            Qual a diferença entre Versatik truck e Slide door
-                            <IoIosArrowDown />
+                            <div className={styles.question}>
+                                Qual a diferença entre Versatik truck e Slide door?
+                            </div>
+                            <div className={styles.arrowContainer}><IoIosArrowDown /></div>
                         </button>
                         <div className={styles.accordionBody}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio saepe placeat natus distinctio. Qui fuga facere rerum libero dolor cum provident ab? Ipsa, officia minus deleniti itaque quos placeat dolore.
@@ -45,38 +47,28 @@ export default function Doubts() {
                         </div>
                     </div>
                     <div className={styles.accordionContainer}>
-                        <div className={styles.accordionHead} onClick={(ev) => openAccordion(ev)}>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ut voluptatum autem praesentium et ad molestias sunt. Magnam incidunt omnis voluptas autem, delectus facere porro ex debitis hic expedita assumenda?
-                            <IoIosArrowDown />
-                        </div>
+                        <button className={styles.accordionHead} onClick={(ev) => openAccordion(ev)}>
+                            <div className={styles.question}>
+                                Qual o tempo de garantia do serviço?
+                            </div>
+                            <div className={styles.arrowContainer}><IoIosArrowDown /></div>
+                        </button>
                         <div className={styles.accordionBody}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio saepe placeat natus distinctio. Qui fuga facere rerum libero dolor cum provident ab? Ipsa, officia minus deleniti itaque quos placeat dolore.
+                            Lorem ippsum dolor sit amet consectetur adipisicing elit. Optio saepe placeat natus distinctio. Qui fuga facere rerum libero dolor cum provident ab? Ipsa, officia minus deleniti itaque quos placeat dolore.
                         </div>
                     </div>
                     <div className={styles.accordionContainer}>
-                        <div className={styles.accordionHead} onClick={(ev) => openAccordion(ev)}>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ut voluptatum autem praesentium et ad molestias sunt. Magnam incidunt omnis voluptas autem, delectus facere porro ex debitis hic expedita assumenda?
-                            <IoIosArrowDown />
-                        </div>
+                        <button className={styles.accordionHead} onClick={(ev) => openAccordion(ev)}>
+                            <div className={styles.question}>Qual a diferença entre Versatik truck e Slide door</div>
+                            <div className={styles.arrowContainer}><IoIosArrowDown /></div>
+                        </button>
                         <div className={styles.accordionBody}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio saepe placeat natus distinctio. Qui fuga facere rerum libero dolor cum provident ab? Ipsa, officia minus deleniti itaque quos placeat dolore.
-                        </div>
-                    </div>
-                    <div className={styles.accordionContainer}>
-                        <div className={styles.accordionHead} onClick={(ev) => openAccordion(ev)}>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ut voluptatum autem praesentium et ad molestias sunt. Magnam incidunt omnis voluptas autem, delectus facere porro ex debitis hic expedita assumenda?
-                            <IoIosArrowDown />
-                        </div>
-                        <div className={styles.accordionBody}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio saepe placeat natus distinctio. Qui fuga facere rerum libero dolor cum provident ab? Ipsa, officia minus deleniti itaque quos placeat dolore.
-                        </div>
-                    </div>
-                    <div className={styles.accordionContainer}>
-                        <div className={styles.accordionHead} onClick={(ev) => openAccordion(ev)}>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ut voluptatum autem praesentium et ad molestias sunt. Magnam incidunt omnis voluptas autem, delectus facere porro ex debitis hic expedita assumenda?
-                            <IoIosArrowDown />
-                        </div>
-                        <div className={styles.accordionBody}>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio saepe placeat natus distinctio. Qui fuga facere rerum libero dolor cum provident ab? Ipsa, officia minus deleniti itaque quos placeat dolore.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio saepe placeat natus distinctio. Qui fuga facere rerum libero dolor cum provident ab? Ipsa, officia minus deleniti itaque quos placeat dolore.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio saepe placeat natus distinctio. Qui fuga facere rerum libero dolor cum provident ab? Ipsa, officia minus deleniti itaque quos placeat dolore.
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio saepe placeat natus distinctio. Qui fuga facere rerum libero dolor cum provident ab? Ipsa, officia minus deleniti itaque quos placeat dolore.
                         </div>
                     </div>
