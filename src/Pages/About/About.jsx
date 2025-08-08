@@ -30,7 +30,7 @@ export default function About() {
 
                             <div className={styles.contentMask}></div>
                         </p>
-                        <div className={styles.seeMore} onClick={seeMoreOpen}>{seeMore ? "Ver menos" : "Ver mais"}</div>
+                        <button className={styles.seeMore} onClick={seeMoreOpen}>{seeMore ? "Ver menos" : "Ver mais"}</button>
                     </div>
                     <div className={`${styles.cardImage} ${styles.card}`}>
                     </div>
