@@ -44,7 +44,8 @@
                 color: white;
                 font-size: 1rem;
                 text-align: left;
-                transition: .25s;
+                transition: .5s;
+                transition-delay: .15s;
 
                 &:hover {
                     background-color: v.$primary-color-hover;
@@ -96,6 +97,7 @@
                     gap: 3rem;
                     cursor: pointer;
                     background-color: v.$primary-color-hover;
+                    transition-delay: 0s;
 
                     svg {
                         transform: rotate(-180deg);

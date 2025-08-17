@@ -207,46 +207,44 @@ export default function Home() {
     }
 
     return (
-        <>
-            <div className={styles.homeContainer} id={styles.homeContainer}>
-                <Header />
-                <WhatsAppButton />
-                <aside>
-                    <ul>
-                        <li key={1} data-service={`1`} className={`${styles.serviceItemMenu} ${service == 1 ? styles.active : ""}`} onClick={ev => changeSection(ev)}>Início</li>
-                        <h3>Nossos serviços</h3>
-                        {
-                            services.map(serviceElement => {
-                                return (
-                                    <li key={serviceElement.infos.id} data-service={`${serviceElement.infos.id}`} className={`${styles.serviceItemMenu} ${styles.advanced} ${service == serviceElement.infos.id ? styles.active : ""}`} onClick={ev => changeSection(ev)}>{serviceElement.infos.title}</li>
-                                )
-                            })
-                        }
-                        <li key={services.length + 2} data-service={services.length + 2} className={`${styles.serviceItemMenu} ${service == services.length + 2 ? styles.active : ""}`} onClick={ev => changeSection(ev)}>Informações</li>
-                    </ul>
-                </aside>
-                <main data-service="1">
-                    <div className={styles.contentMain}>
-                        <Logo/>
-                        <div className={styles.descriptionMain}>
-                            Transparência <br />
-                            é mais do que apenas estilo <br />
-                            <div>Soluções em vidros para qualquer circunstância</div>
-                        </div>
-                        <NavLink to={`/contato`} className={`${styles.ctaMainButton}`}>Faça um orçamento</NavLink>
+        <div className={styles.homeContainer} id={styles.homeContainer}>
+            <Header />
+            <WhatsAppButton />
+            <aside>
+                <ul>
+                    <li key={1} data-service={`1`} className={`${styles.serviceItemMenu} ${service == 1 ? styles.active : ""}`} onClick={ev => changeSection(ev)}>Início</li>
+                    <h3>Nossos serviços</h3>
+                    {
+                        services.map(serviceElement => {
+                            return (
+                                <li key={serviceElement.infos.id} data-service={`${serviceElement.infos.id}`} className={`${styles.serviceItemMenu} ${styles.advanced} ${service == serviceElement.infos.id ? styles.active : ""}`} onClick={ev => changeSection(ev)}>{serviceElement.infos.title}</li>
+                            )
+                        })
+                    }
+                    <li key={services.length + 2} data-service={services.length + 2} className={`${styles.serviceItemMenu} ${service == services.length + 2 ? styles.active : ""}`} onClick={ev => changeSection(ev)}>Informações</li>
+                </ul>
+            </aside>
+            <main data-service="1">
+                <div className={styles.contentMain}>
+                    <Logo />
+                    <div className={styles.descriptionMain}>
+                        Transparência <br />
+                        é mais do que apenas estilo <br />
+                        <div>Soluções em vidros para qualquer circunstância</div>
                     </div>
-                </main>
-                {
-                    services.map(serviceElement => {
-                        return (
-                            <section key={serviceElement.infos.id} data-service={`${serviceElement.infos.id}`} style={serviceElement.backgroundStyle}>
-                                {sectionType(serviceElement)}
-                            </section>
-                        )
-                    })
-                }
-                <Footer dataService={services.length + 2}></Footer>
-            </div>
-        </>
+                    <NavLink to={`/contato`} className={`${styles.ctaMainButton}`}>Solicite um orçamento</NavLink>
+                </div>
+            </main>
+            {
+                services.map(serviceElement => {
+                    return (
+                        <section key={serviceElement.infos.id} data-service={`${serviceElement.infos.id}`} style={serviceElement.backgroundStyle}>
+                            {sectionType(serviceElement)}
+                        </section>
+                    )
+                })
+            }
+            <Footer dataService={services.length + 2}></Footer>
+        </div>
     );
 }

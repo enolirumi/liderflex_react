@@ -49,7 +49,7 @@ export default function Header(props) {
                         Contato
                     </NavLink>
                 </nav>
-                <NavLink to={`/contato`} className={`${styles.ctaBtn} ctaBtn`}>Faça um orçamento</NavLink>
+                <NavLink to={`/contato`} className={`${styles.ctaBtn} ctaBtn`}>Solicite um orçamento</NavLink>
                 {/* ${(href[href.length - 1] == "" && props.scrollHome == 0) ? styles.none : ""} pra colocar no className acima caso necessário */}
             </header>
         </>
