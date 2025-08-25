@@ -4,6 +4,7 @@ import styles from './style.module.scss'; // se estiver usando CSS Modules
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import LightsBg from '../../Components/LightsBg/LightsBg';
+import WhatsAppButton from '../../Components/WhatsAppButton/WhatsAppButton';
 
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -26,6 +27,7 @@ export default function Doubts() {
         <>
             <Header />
             <LightsBg />
+            <WhatsAppButton/>
 
             <main className={styles.main}>
                 <h2>Dúvidas frequentes</h2>

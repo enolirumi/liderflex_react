@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/host-grotesk": "^5.2.6",
     "@fontsource/roboto": "^5.2.6",
+    "gsap": "^3.13.0",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "react": "^19.1.0",

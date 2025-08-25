@@ -5,4 +5,69 @@
 .main {
     min-height: 100vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 1fr 1fr;
+
+    .formContainer {
+        flex: 1;
+        min-height: 100vh;
+        background-color: v.$background-page-dark;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // padding-top: 7rem;s
+        padding: 5rem;
+
+        form {
+            background-color: red;
+            width: 100%;
+        }
+    }
+
+    .cardsContainer {
+        position: relative;
+        flex: 1;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        overflow: hidden;
+        background: linear-gradient(to right, v.$background-page-dark, transparent), linear-gradient(to bottom, v.$background-page-dark, transparent, transparent);
+
+        &>div {
+            position: relative;
+            transform: translateX(-15%);
+
+            &>div {
+                width: 40vw !important;
+                height: 60vh !important;
+            }
+        }
+        
+        .card {
+            border-color: black;
+            background-color: v.$background-page-dark;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            .header {
+                background-color: v.$primary-color;
+                padding: .5rem;
+                width: 100%;
+            }
+
+            .body {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
 }

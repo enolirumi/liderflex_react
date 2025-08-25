@@ -11,7 +11,7 @@ export default function WhatsAppButton() {
 
     return (
         <div className={styles.container}>
-            <a href="" className={styles.button}><FaWhatsapp /></a>
+            <a href="https://wa.me/message/LWCQ4Q6S4IYAG1" target="_blank" className={styles.button}><FaWhatsapp /></a>
             <div className={`${styles.pulse}`}></div>
         </div>
     )

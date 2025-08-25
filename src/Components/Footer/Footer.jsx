@@ -14,12 +14,12 @@ export default function Footer(props) {
       <div className={styles.logoContainer}>
         <Logo />
         <div className={styles.socialMediaContainer}>
-          <a href='' className={styles.socialMediaButton}>
+          <a href='https://www.instagram.com/liderflexvidros?igsh=MWtzOWttYW5naHhwcA==' target="_blank" className={styles.socialMediaButton}>
             <FaInstagram />
           </a>
-          <a href='' className={styles.socialMediaButton}>
+          {/* <a href='' className={styles.socialMediaButton}>
             <FaFacebookF />
-          </a>
+          </a> */}
         </div>
       </div>
       <div className={styles.infos}>
@@ -28,13 +28,10 @@ export default function Footer(props) {
             Contato:
           </div>
           <div className={styles.content}>
-            <FaPhone />(31) 3332 - 6321
+            <FaPhone />(31)33326321
           </div>
           <div className={styles.content}>
-            <FaPhone />(31) 3504 - 5808
-          </div>
-          <div className={styles.content}>
-            <FaPhone />(31) 9 8552 - 1693
+            <FaPhone />(31)83530217
           </div>
           <div className={styles.content}>
             <IoIosMail style={{fontSize: "1.1rem"}} />liderflexvidros@liderflexvidros.com.br

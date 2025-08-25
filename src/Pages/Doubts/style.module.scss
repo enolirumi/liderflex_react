@@ -9,6 +9,7 @@
     justify-content: start;
     flex-direction: column;
     padding: 15vh 20% 5vh 20%;
+    background: linear-gradient(to top, black, transparent);
 
     @include m.respond-to(xl) {
         padding: 15vh 5% 5vh 5%;
