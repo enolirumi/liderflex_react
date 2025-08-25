@@ -24,16 +24,34 @@ export default function Contact() {
                         pauseOnHover={false}
                     >
                         <Card className={styles.card}>
-                            <div className={styles.header}>Feedback</div>
+                            <div className={styles.header}>Feedback de Cliente</div>
                             <div className={styles.body}>
                                 a
                             </div>
                         </Card>
                         <Card className={styles.card}>
-                            <div className={styles.header}>Feedback</div>
+                            <div className={styles.header}>Serviço realizado</div>
+                            <div className={styles.body}>
+                                <img src="/images/Home/versatik_division.jpg" alt="" />
+                            </div>
                         </Card>
                         <Card className={styles.card}>
-                            <div className={styles.header}>Feedback</div>
+                            <div className={styles.header}>Feedback de Cliente</div>
+                            <div className={styles.body}>
+                                a
+                            </div>
+                        </Card>
+                        <Card className={styles.card}>
+                            <div className={styles.header}>Feedback de Cliente</div>
+                            <div className={styles.body}>
+                                a
+                            </div>
+                        </Card>
+                        <Card className={styles.card}>
+                            <div className={styles.header}>Feedback de Cliente</div>
+                            <div className={styles.body}>
+                                a
+                            </div>
                         </Card>
                     </CardSwap>
                 </div>
