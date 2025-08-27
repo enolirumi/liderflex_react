@@ -16,25 +16,159 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        // padding-top: 7rem;s
-        padding: 5rem;
+        padding: 7rem 5rem 5rem 5rem;
+        position: relative;
+
+        @include m.respond-to(xxl) {
+
+            padding: 7rem 1rem 5rem 1rem;
+        }
+
+        @include m.respond-to(lg) {
+            width: 100%;
+            background: transparent;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
         form {
-            background-color: red;
             width: 100%;
+            padding: 3rem;
+
+            background: rgba(44, 44, 44, 0.5);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8.1px);
+            -webkit-backdrop-filter: blur(8.1px);
+            // z-index: 10;
+
+            color: white;
+
+            &>div {
+                margin-top: 1rem;
+                position: relative;
+
+                &.doubleInputContainer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 1rem;
+
+                    @include m.respond-to(xl) {
+                        flex-direction: column;
+
+                        &>div {
+                            width: 100%;
+                        }
+                    }
+
+                    @include m.respond-to(lg) {
+                        flex-direction: row;
+
+                        &>div {
+                            width: 100%;
+                        }
+                    }
+
+                    @include m.respond-to(sm) {
+                        flex-direction: column;
+
+                        &>div {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                &.singleInputContainer,
+                &.doubleInputContainer>div {
+                    flex: 1;
+                    position: relative;
+
+                    input,
+                    textarea,
+                    select {
+                        width: 100%;
+                        max-width: 100%;
+                        padding: .4rem;
+                        margin-top: 1.3rem;
+                        border: none;
+                        border-bottom: 1px solid v.$primary-color;
+                        outline: none;
+                        background-color: transparent;
+                        color: white;
+                        font-size: 1rem;
+                        transition: .3s;
+
+                        &>option {
+                            background-color: black;
+                            color: white;
+                        }
+                    }
+
+                    textarea {
+                        min-height: 200px;
+                        resize: none;
+                        // border-left: 1px solid v.$primary-color;
+                        font-family: 'Roboto', sans-serif;
+                    }
+
+                    label {
+                        position: absolute;
+                        top: 2rem;
+                        left: .5rem;
+                        transform: translateY(-30%);
+                        pointer-events: none;
+                        transition: .3s;
+                    }
+
+                    button[type="submit"] {
+                        width: 100%;
+                        border: none;
+                        color: white;
+                        background-color: v.$primary-color;
+                        padding: 1rem;
+                        cursor: pointer;
+                        transition: .3s;
+                        font-size: 1rem;
+                        margin-top: 1rem;
+
+                        &:hover {
+                            background-color: v.$primary-color-hover;
+                        }
+                    }
+
+                    &.able {
+
+                        label {
+                            top: .5rem;
+                            font-size: .8rem;
+                            left: 0;
+                            color: rgb(216, 216, 216);
+                        }
+                    }
+                }
+
+            }
+
         }
     }
 
     .cardsContainer {
         position: relative;
         flex: 1.3;
-        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: end;
         align-items: end;
         overflow: hidden;
-        background: linear-gradient(to right, v.$background-page-dark, transparent), linear-gradient(to bottom, v.$background-page-dark, transparent, transparent);
+        background: linear-gradient(to right, rgba(v.$background-page-dark, 1), transparent, transparent), linear-gradient(to bottom, rgba(v.$background-page-dark, 1), transparent, transparent);
+
+        @include m.respond-to(lg) {
+            display: none;
+        }
 
         &>div {
             position: relative;
@@ -45,7 +179,7 @@
                 height: 60vh !important;
             }
         }
-        
+
         .card {
             border-color: black;
             background-color: v.$background-page-dark;
@@ -53,11 +187,25 @@
             display: flex;
             align-items: center;
             flex-direction: column;
+            min-width: 400px;
+
+            &:hover {
+                
+                .header {
+                    background-color: v.$primary-color-hover;
+                    cursor: pointer;
+                }
+
+                .body {
+                    background-color: black;
+                }
+            }
 
             .header {
                 background-color: v.$primary-color;
                 padding: .5rem;
                 width: 100%;
+                font-weight: bold;
             }
 
             .body {
@@ -66,10 +214,68 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-direction: column;
 
-                img {
-                    width: 100%;
-                    height: 100%;
+            }
+
+            &.reviewCard {
+
+                .body {
+                    padding: 4rem 3rem;
+                    text-align: center;
+                    justify-content: start;
+
+
+                    img {
+                        width: 8rem;
+                        height: 8rem;
+                        border-radius: 100%;
+                    }
+
+                    .name {
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                        margin-top: 1rem;
+                    }
+
+                    .review {
+                        margin-top: 1rem;
+
+                        &::before, &::after {
+                            color: rgb(211, 211, 211);
+                        }
+
+                        &::before {
+                            content: "“";
+                            margin-right: .5rem;
+                        }
+                        
+                        &::after {
+                            content: "”";
+                            margin-left: .5rem;
+                        }
+                    }
+                }
+            }
+
+            &.imageCard {
+
+
+                .body {
+                    padding: 4rem 3rem;
+                    justify-content: start;
+                    align-items: start;
+
+                    .serviceName {
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                    }
+
+                    img {
+                        width: 100%;
+                        border: solid 3px v.$primary-color;
+                        margin-top: 1rem;
+                    }
                 }
             }
         }

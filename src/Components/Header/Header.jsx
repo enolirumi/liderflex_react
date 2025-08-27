@@ -20,10 +20,14 @@ export default function Header(props) {
         let page = window.location.href.split("/")
         page = page[page.length - 1]
 
-        if (page == "") document.querySelector(`.${styles.logoMobile}`).classList.add(styles.home)
+        if (page == "") {
+            document.querySelector(`.${styles.logoMobile}`).classList.add(styles.home)
+        }
 
         return () => {
-            if(page == "") document.querySelector(`.${styles.logoMobile}`).classList.remove(styles.home)
+            if (page == "") {
+                document.querySelector(`.${styles.logoMobile}`).classList.remove(styles.home)
+            }
         }
     }, [])
 

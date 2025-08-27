@@ -14,6 +14,7 @@ export default function HomeSection(props) {
             <div className={styles.contentContainer}>
                 <h3>{props.title}</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dolorem excepturi deserunt, enim, natus architecto eveniet itaque, voluptate deleniti corporis quis vel magnam rerum? Libero eligendi rerum labore vel nisi.</p>
+                <NavLink to={`/contato`} className={`${styles.ctaMainButton}`}>Solicite um orçamento</NavLink>
                 <div className={styles.imagesContainer}>
                     {props.images.map(image => {
                         return(

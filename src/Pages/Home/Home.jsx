@@ -107,10 +107,10 @@ export default function Home() {
                 id: 2,
                 title: `Versatik Division`,
                 images: [
-                    {
-                        id: 1,
-                        imagePath: `/images/Home/versatik_division.jpg`
-                    }
+                    // {
+                    //     id: 1,
+                    //     imagePath: `/images/Home/versatik_division.jpg`
+                    // }
                 ],
                 type: "a",
             },
@@ -118,28 +118,6 @@ export default function Home() {
                 background: `
                     ${backgroundEffect}
                     url('/images/Home/versatik_division.jpg')
-                `,
-                backgroundAttachment: `fixed`,
-                backgroundSize: `cover`,
-                backgroundRepeat: `no-repeat`,
-                backgroundPosition: `center center`,
-            }
-        },
-        {
-            infos: {
-                id: 3,
-                title: `Porta Pivotante`,
-                images: [
-                    {
-                        id: 1,
-                        imagePath: `/images/Home/porta_pivotante.jpg`
-                    }
-                ],
-                type: "b",
-            },
-            backgroundStyle: {
-                background: `
-                    transparent
                 `,
                 backgroundAttachment: `fixed`,
                 backgroundSize: `cover`,
@@ -172,13 +150,35 @@ export default function Home() {
         },
         {
             infos: {
+                id: 3,
+                title: `Porta Pivotante`,
+                images: [
+                    // {
+                    //     id: 1,
+                    //     imagePath: `/images/Home/porta_pivotante.jpg`
+                    // }
+                ],
+                type: "a",
+            },
+            backgroundStyle: {
+                background: `
+                    transparent
+                `,
+                backgroundAttachment: `fixed`,
+                backgroundSize: `cover`,
+                backgroundRepeat: `no-repeat`,
+                backgroundPosition: `center center`,
+            }
+        },
+        {
+            infos: {
                 id: 5,
                 title: `Guarda Corpo`,
                 images: [
-                    {
-                        id: 1,
-                        imagePath: `/images/Home/guarda_corpo.jpg`
-                    }
+                    // {
+                    //     id: 1,
+                    //     imagePath: `/images/Home/guarda_corpo.jpg`
+                    // }
                 ],
                 type: "a",
             },
