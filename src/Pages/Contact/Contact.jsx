@@ -52,24 +52,28 @@ export default function Contact() {
                         </div>
                         <div className={styles.doubleInputContainer}>
                             <div>
-                                <label htmlFor="name_form">Nome</label>
+                                <label htmlFor="name_form">Nome <span className={styles.requiredAsterisco}>*</span></label>
                                 <input type="text" id="name_form" name='name_form' onFocus={(ev) => { ableInput(ev) }} onBlur={(ev) => { disableInput(ev) }} />
                             </div>
                             <div>
-                                <label htmlFor="">Sobrenome</label>
+                                <label htmlFor="">Sobrenome <span className={styles.requiredAsterisco}>*</span></label>
                                 <input type="text" onFocus={(ev) => { ableInput(ev) }} onBlur={(ev) => { disableInput(ev) }} />
                             </div>
                         </div>
                         <div className={styles.singleInputContainer}>
-                            <label htmlFor="">E-mail</label>
+                            <label htmlFor="">E-mail <span className={styles.requiredAsterisco}>*</span></label>
                             <input type="email" onFocus={(ev) => { ableInput(ev) }} onBlur={(ev) => { disableInput(ev) }} />
                         </div>
                         <div className={styles.singleInputContainer}>
-                            <label htmlFor="">Assunto</label>
+                            <label htmlFor="">Telefone <span className={styles.requiredAsterisco}>*</span></label>
+                            <input type="email" onFocus={(ev) => { ableInput(ev) }} onBlur={(ev) => { disableInput(ev) }} />
+                        </div>
+                        <div className={styles.singleInputContainer}>
+                            <label htmlFor="">Assunto <span className={styles.requiredAsterisco}>*</span></label>
                             <input type="text" onFocus={(ev) => { ableInput(ev) }} onBlur={(ev) => { disableInput(ev) }} />
                         </div>
                         <div className={styles.singleInputContainer}>
-                            <label htmlFor="">Mensagem</label>
+                            <label htmlFor="">Mensagem <span className={styles.requiredAsterisco}>*</span></label>
                             <textarea name="" id="" onFocus={(ev) => { ableInput(ev) }} onBlur={(ev) => { disableInput(ev) }}></textarea>
                         </div>
                         <div className={styles.singleInputContainer}>
