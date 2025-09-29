@@ -5,6 +5,8 @@ import Footer from '../../Components/Footer/Footer';
 import LightsBg from '../../Components/LightsBg/LightsBg';
 import CardSwap, { Card } from '../../Components/CardSwap/CardSwap';
 
+import { FaWhatsapp } from "react-icons/fa";
+
 export default function Contact() {
     const formRef = useRef(null)
     const cardsRef = useRef(null)
@@ -69,15 +71,14 @@ export default function Contact() {
                             <input type="email" onFocus={(ev) => { ableInput(ev) }} onBlur={(ev) => { disableInput(ev) }} />
                         </div>
                         <div className={styles.singleInputContainer}>
-                            <label htmlFor="">Assunto <span className={styles.requiredAsterisco}>*</span></label>
-                            <input type="text" onFocus={(ev) => { ableInput(ev) }} onBlur={(ev) => { disableInput(ev) }} />
-                        </div>
-                        <div className={styles.singleInputContainer}>
                             <label htmlFor="">Mensagem <span className={styles.requiredAsterisco}>*</span></label>
                             <textarea name="" id="" onFocus={(ev) => { ableInput(ev) }} onBlur={(ev) => { disableInput(ev) }}></textarea>
                         </div>
                         <div className={styles.singleInputContainer}>
                             <button type='submit'>Enviar</button>
+                        </div>
+                        <div className={styles.singleInputContainer}>
+                            <a href="https://wa.me/message/LWCQ4Q6S4IYAG1" target="_blank" className={styles.wppFormBtn}>Ou nos chame no <FaWhatsapp />WhatsApp</a>
                         </div>
                     </form>
                 </div>
