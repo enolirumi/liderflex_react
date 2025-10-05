@@ -54,6 +54,10 @@
 
                 .requiredAsterisco {
                     color: red;
+
+                    &.visibleMessage::after {
+                        content: " Campo obrigatório!";
+                    }
                 }
 
                 &.doubleInputContainer {
