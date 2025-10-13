@@ -25,27 +25,58 @@ export default function Contact() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        
+
         setStatus("Enviando...")
 
-        console.log(form);
-        
+        const formData = new FormData();
+        for (const key in form) formData.append(key, form[key]);
+
 
         try {
-            const response = await axios.post("https://liderflexvidros.com.br/api/sendMail.php", form, {
+            const response = await axios.post("/api/sendMail.php", formData, {
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "multipart/form-data",
                 }
             });
 
-            if(response.data.status == "success") {
-
+            if (response.data.status == "success") {
+                toast.success(response.data.message, {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                });
             } else {
-
+                toast.error(response.data.message, {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                });
             }
-            
+
         } catch (error) {
-            
+            toast.error('Erro interno! Por favor tente novamente mais tarde', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
         }
 
         setStatus("Enviar");
@@ -63,15 +94,15 @@ export default function Contact() {
         if (ev.target.value == "") {
             ev.target.parentNode.classList.remove(styles.able)
             let required
-            if(required = ev.target.parentNode.querySelector(".requiredAsterisco")) {
-                if(required.classList.contains("visibleMessage")) {
+            if (required = ev.target.parentNode.querySelector(".requiredAsterisco")) {
+                if (required.classList.contains("visibleMessage")) {
                     required.classList.remove("visibleMessage")
                 } else {
                     required.classList.add("visibleMessage")
                 }
             }
 
-            
+
         }
     }
 
