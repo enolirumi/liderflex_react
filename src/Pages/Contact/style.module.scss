@@ -135,6 +135,10 @@
                         transform: translateY(-30%);
                         pointer-events: none;
                         transition: .3s;
+
+                        &.colorRed {
+                            color: red !important;
+                        }
                     }
 
                     button[type="submit"],
