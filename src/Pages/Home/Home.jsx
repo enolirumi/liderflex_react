@@ -106,6 +106,7 @@ export default function Home() {
             infos: {
                 id: 2,
                 title: `Versatik Division`,
+                description: "Sistema modular de divisórias de vidro ou alumínio que combina estética e funcionalidade para ambientes corporativos e residenciais.",
                 images: [
                     // {
                     //     id: 1,
@@ -129,6 +130,7 @@ export default function Home() {
             infos: {
                 id: 3,
                 title: `Slide door`,
+                description: "Porta de correr moderna, ideal para otimizar espaço e integrar ambientes com elegância.",
                 images: [
                     // {
                     //     id: 1,
@@ -152,6 +154,7 @@ export default function Home() {
             infos: {
                 id: 4,
                 title: `Porta Pivotante`,
+                description: "Porta de eixo central que proporciona amplitude e sofisticação na entrada de ambientes.",
                 images: [
                     // {
                     //     id: 1,
@@ -174,6 +177,7 @@ export default function Home() {
             infos: {
                 id: 5,
                 title: `Guarda Corpo`,
+                description: "Estrutura de proteção em vidro ou alumínio que garante segurança e valoriza o design arquitetônico.",
                 images: [
                     // {
                     //     id: 1,
@@ -198,11 +202,11 @@ export default function Home() {
     const sectionType = (serviceElement) => {
         switch (serviceElement.infos.type) {
             case "a":
-                return (<HomeSection title={serviceElement.infos.title} images={serviceElement.infos.images}></HomeSection>)
+                return (<HomeSection title={serviceElement.infos.title} description={serviceElement.infos.description} images={serviceElement.infos.images}></HomeSection>)
             case "b":
-                return (<HomeSectionB title={serviceElement.infos.title} images={serviceElement.infos.images}></HomeSectionB>)
+                return (<HomeSectionB title={serviceElement.infos.title} description={serviceElement.infos.description} images={serviceElement.infos.images}></HomeSectionB>)
             default:
-                return (<HomeSection title={serviceElement.infos.title} images={serviceElement.infos.images}></HomeSection>)
+                return (<HomeSection title={serviceElement.infos.title} description={serviceElement.infos.description} images={serviceElement.infos.images}></HomeSection>)
         }
     }
 
